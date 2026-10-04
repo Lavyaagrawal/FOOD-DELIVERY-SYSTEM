@@ -15,7 +15,6 @@
     gap: 20px;
     color: #49557e;
     font-size: 18px;
-
 }
 
 .navbar-right {
@@ -50,7 +49,6 @@
 
 .navbar-search-icon {
     position: relative;
-
 }
 
 .navbar-search-icon .dot {
@@ -58,7 +56,57 @@
     min-width: 10px;
     min-height: 10px;
     background-color: tomato;
-    border-radius: 5px;
+    border-radius: 50%;
     top: -8px;
     right: -8px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .navbar .logo {
+        width: 120px;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 20px;
+    }
+
+    .navbar-right img {
+        width: 20px;
+    }
+
+    .navbar-right button {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 0px;
+    }
+
+    .navbar .logo {
+        width: 100px;
+    }
+
+    .navbar-right {
+        gap: 12px;
+    }
+
+    .navbar-right button {
+        padding: 6px 15px;
+        font-size: 13px;
+    }
+
+    .navbar-search-icon img {
+        width: 18px;
+    }
 }

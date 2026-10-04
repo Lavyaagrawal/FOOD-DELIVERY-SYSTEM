@@ -1,0 +1,160 @@
+.place-order {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+/* Left Section */
+
+.place-order-left {
+    width: 100%;
+    max-width: 600px;
+}
+
+.place-order-left .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #262626;
+}
+
+.place-order-left input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.place-order-left input:focus {
+    border-color: tomato;
+}
+
+.multi-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.multi-fields input {
+    width: 100%;
+}
+
+
+/* Right Section */
+
+.place-order-right {
+    width: 100%;
+    max-width: 450px;
+}
+
+.cart-total {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-total h2 {
+    color: #262626;
+    font-size: 25px;
+    margin: 0;
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.cart-total-details b {
+    color: #262626;
+    font-size: 17px;
+}
+
+.cart-total hr {
+    border: none;
+    border-top: 1px solid #e2e2e2;
+}
+
+.cart-total button {
+    border: none;
+    background-color: tomato;
+    color: white;
+    padding: 12px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.cart-total button:hover {
+    background-color: #e64a35;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .place-order {
+        gap: 40px;
+    }
+
+    .place-order-left {
+        max-width: 500px;
+    }
+
+    .place-order-left .title {
+        font-size: 26px;
+    }
+
+    .place-order-right {
+        max-width: 350px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .place-order {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .place-order-left,
+    .place-order-right {
+        max-width: 100%;
+    }
+
+    .place-order-left .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .multi-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .place-order-left input {
+        padding: 11px 12px;
+    }
+
+    .cart-total h2 {
+        font-size: 22px;
+    }
+
+    .cart-total button {
+        width: 100%;
+        padding: 13px;
+    }
+}

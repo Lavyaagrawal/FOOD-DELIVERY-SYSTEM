@@ -1,20 +1,35 @@
-import React, { useContext } from 'react'
-import './FoodDisplay.css'
-import { StoreContext } from '../../context/StoreContext'
-import FoodItem from '../FoodItem/FoodItem'
-const FoodDisplay = ({category}) => {
+import React, { useContext } from "react";
+import "./FoodDisplay.css";
+import { StoreContext } from "../../context/StoreContext";
+import FoodItem from "../FoodItem/FoodItem";
 
-    const{food_list}=useContext(StoreContext)
+const FoodDisplay = ({ category }) => {
+  const { food_list } = useContext(StoreContext);
+
   return (
-    <div className='food-display' id='food-display'>
+    <div className="food-display" id="food-display">
       <h2>Top dishes near you</h2>
+
       <div className="food-display-list">
-        {food_list.map((item,index)=>{
-            return <FoodItem key={index} id={item.id} name={item.name} description={item.description} price={item.price} image={item.image}></FoodItem>
+        {food_list.map((item) => {
+          if (category === "ALL" || category === item.category) {
+            return (
+              <FoodItem
+                key={item._id}
+                id={item._id}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                image={item.image}
+              />
+            );
+          }
+
+          return null;
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FoodDisplay
+export default FoodDisplay;
