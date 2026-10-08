@@ -9,7 +9,7 @@ const Orders = () => {
 
     const [orders, setOrders] = useState([])
 
-    const url = "http://localhost:4000"
+    const url = "https://food-delivery-system-2xcs.onrender.com";
 
     // ===============================
     // FETCH ALL ORDERS

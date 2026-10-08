@@ -10,7 +10,7 @@ import Orders from "./pages/Orders/Orders";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-export const url = "http://localhost:4000";
+export const url = "https://food-delivery-system-2xcs.onrender.com";
 
 const App = () => {
   return (
