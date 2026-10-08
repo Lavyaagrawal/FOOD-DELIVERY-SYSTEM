@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 
-import Home from "./pages/home/home";
-import Cart from "./pages/cart/cart";
+import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Verify from "./pages/Verify/Verify";
 import MyOrder from "./pages/MyOrders/MyOrder";
