@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
@@ -11,6 +12,7 @@ const Cart = () => {
     removeFromCart,
     addToCart,
     getTotalCartAmount,
+    url,
   } = useContext(StoreContext);
 
   const navigate = useNavigate();
@@ -24,8 +26,10 @@ const Cart = () => {
 
   return (
     <div className="cart">
+
       {/* Cart Items */}
       <div className="cart-items">
+
         <div className="cart-items-title">
           <p>Items</p>
           <p>Title</p>
@@ -39,54 +43,98 @@ const Cart = () => {
         <hr />
 
         {food_list.map((item) => {
+
           if (cartItems[item._id] > 0) {
+
             return (
               <div key={item._id}>
-                <div className="cart-items-title cart-items-item">
-                  <img src={item.image} alt={item.name} />
 
+                <div className="cart-items-title cart-items-item">
+
+                  {/* Food Image */}
+                  <img
+                    src={url + "/images/" + item.image}
+                    alt={item.name}
+                  />
+
+                  {/* Food Name */}
                   <p>{item.name}</p>
 
+                  {/* Food Price */}
                   <p>${item.price}</p>
 
+                  {/* Quantity */}
                   <div className="cart-quantity">
-                    <button onClick={() => removeFromCart(item._id)}>-</button>
+
+                    <button
+                      onClick={() =>
+                        removeFromCart(item._id)
+                      }
+                    >
+                      -
+                    </button>
 
                     <p>{cartItems[item._id]}</p>
 
-                    <button onClick={() => addToCart(item._id)}>+</button>
+                    <button
+                      onClick={() =>
+                        addToCart(item._id)
+                      }
+                    >
+                      +
+                    </button>
+
                   </div>
 
-                  <p>${(item.price * cartItems[item._id]).toFixed(2)}</p>
+                  {/* Total Price */}
+                  <p>
+                    $
+                    {(
+                      item.price *
+                      cartItems[item._id]
+                    ).toFixed(2)}
+                  </p>
 
+                  {/* Remove Item */}
                   <img
                     className="cart-remove"
                     onClick={() => {
-                      for (let i = 0; i < cartItems[item._id]; i++) {
+                      for (
+                        let i = 0;
+                        i < cartItems[item._id];
+                        i++
+                      ) {
                         removeFromCart(item._id);
                       }
                     }}
                     src={assets.cross_icon}
                     alt="Remove"
                   />
+
                 </div>
 
                 <hr />
+
               </div>
             );
           }
 
           return null;
         })}
+
       </div>
+
 
       {/* Cart Bottom */}
       <div className="cart-bottom">
+
         {/* Cart Total */}
         <div className="cart-total">
+
           <h2>Cart Totals</h2>
 
           <div>
+
             <div className="cart-total-details">
               <p>Subtotal</p>
               <p>${subtotal.toFixed(2)}</p>
@@ -105,26 +153,45 @@ const Cart = () => {
               <b>Total</b>
               <b>${total.toFixed(2)}</b>
             </div>
+
           </div>
 
-          <button onClick={() => navigate("/order")}>
+          <button
+            onClick={() => navigate("/order")}
+          >
             PROCEED TO CHECKOUT
           </button>
+
         </div>
+
 
         {/* Promo Code */}
         <div className="cart-promocode">
-          <p>If you have a promo code, enter it here</p>
+
+          <p>
+            If you have a promo code, enter it here
+          </p>
 
           <div className="cart-promocode-input">
-            <input type="text" placeholder="promo code" />
 
-            <button>Submit</button>
+            <input
+              type="text"
+              placeholder="promo code"
+            />
+
+            <button>
+              Submit
+            </button>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
   );
 };
 
 export default Cart;
+

@@ -17,6 +17,11 @@
     font-size: 18px;
 }
 
+.navbar-menu a {
+    text-decoration: none;
+    color: #49557e;
+}
+
 .navbar-right {
     display: flex;
     align-items: center;
@@ -47,6 +52,11 @@
     cursor: pointer;
 }
 
+
+/* ========================= */
+/* Cart */
+/* ========================= */
+
 .navbar-search-icon {
     position: relative;
 }
@@ -59,9 +69,131 @@
     border-radius: 50%;
     top: -8px;
     right: -8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.navbar-search-icon .dot span {
+    color: white;
+    font-size: 10px;
+    line-height: 1;
+}
+
+
+/* ========================= */
+/* Profile */
+/* ========================= */
+
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-profile>img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+
+/* ========================= */
+/* Profile Dropdown */
+/* ========================= */
+
+.nav-profile-dropdown {
+    position: absolute;
+    display: none;
+
+    right: 0;
+    top: 25px;
+
+    z-index: 10;
+
+    background-color: white;
+
+    padding: 12px 15px;
+
+    border-radius: 5px;
+    border: 1px solid #ddd;
+
+    list-style: none;
+
+    min-width: 140px;
+}
+
+
+/* Show dropdown */
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* ========================= */
+/* Orders + Logout */
+/* ========================= */
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+
+/* Orders Link */
+
+.nav-profile-dropdown li a {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    text-decoration: none;
+
+    color: #49557e;
+}
+
+
+/* Hover */
+
+.nav-profile-dropdown li:hover {
+    opacity: 0.7;
+}
+
+
+/* Icons */
+
+.nav-profile-dropdown img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+/* Text */
+
+.nav-profile-dropdown p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #49557e;
+}
+
+
+/* ========================= */
 /* Tablet */
+/* ========================= */
+
 @media (max-width: 900px) {
 
     .navbar .logo {
@@ -76,7 +208,7 @@
         gap: 20px;
     }
 
-    .navbar-right img {
+    .navbar-right>img {
         width: 20px;
     }
 
@@ -84,9 +216,19 @@
         padding: 7px 20px;
         font-size: 15px;
     }
+
+    .navbar-profile>img {
+        width: 22px;
+        height: 22px;
+    }
+
 }
 
+
+/* ========================= */
 /* Mobile */
+/* ========================= */
+
 @media (max-width: 600px) {
 
     .navbar {
@@ -109,4 +251,27 @@
     .navbar-search-icon img {
         width: 18px;
     }
+
+    .navbar-profile>img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-profile-dropdown {
+        right: -5px;
+        top: 22px;
+        min-width: 125px;
+        padding: 10px 12px;
+    }
+
+    .nav-profile-dropdown img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .nav-profile-dropdown p {
+        font-size: 13px;
+    }
+
 }
+
